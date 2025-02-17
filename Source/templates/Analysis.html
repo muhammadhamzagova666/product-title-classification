@@ -1,0 +1,75 @@
+{% extends 'Navbar.html' %} {% block head %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static' , filename='css/analysis.css') }}"
+/>
+
+{% endblock %} {% block body %}
+
+<section id="analysis">
+  <div class="container">
+    <h1>Data Visualization</h1>
+    <div class="row">
+      <div class="card col-md-3 glassmorphic">
+        <a href="/static/images/Graph1.jpeg">
+          <img
+            src="/static/images/Graph1.jpeg"
+            class="card-img-top"
+            alt="..."
+          />
+        </a>
+      </div>
+      <div class="card col-md-3 glassmorphic">
+        <a href="/static/images/Data_Visualisation_1.jpeg">
+          <img
+            src="/static/images/Data_Visualisation_1.jpeg"
+            class="card-img-top"
+            alt="..."
+          />
+        </a>
+      </div>
+      <div class="card col-md-3 glassmorphic">
+        <a href="/static/images/Graph2.jpeg">
+          <img
+            src="/static/images/Graph2.jpeg"
+            class="card-img-top"
+            alt="..."
+          />
+        </a>
+      </div>
+    </div>
+    <hr />
+    <h1>Model Visualization</h1>
+    <h3>Comparision Of Support Vector Machine, Random Forest Classifier and Decision Tree Classifier</h3>
+    <div class="row">
+      <div class="card col-md-3 glassmorphic">
+        <!-- <a href="/static/images/Model_Visualization_1.jpeg">
+          <img
+            src="/static/images/Model_Visualization_1.jpeg"
+            class="card-img-top"
+            alt="..."
+          />
+        </a> -->
+        <a href="/static/images/modeltest.png">
+          <img
+            src="/static/images/modeltest.png"
+            class="card-img-top"
+            alt="..."
+          />
+        </a>
+      </div>
+      <div class="card col-md-3 glassmorphic">
+        <a href="/static/images/modeltrain.png">
+          <img
+            src="/static/images/modeltrain.png"
+            class="card-img-top"
+            alt="..."
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

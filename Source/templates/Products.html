@@ -1,0 +1,54 @@
+{% extends 'Navbar.html' %} {% block head %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static' , filename='css/product.css') }}"
+/>
+
+{% endblock %} {% block body %}
+
+<div id="Main">
+  <div class="row">
+    <div class="col-md-8">
+      <img
+        id="categoryImage"
+        class="active"
+        width="500px"
+        height="500px"
+        alt=""
+      />
+    </div>
+    <div class="col-md-4">
+      <div class="product-description">
+        <span>{{Category_1}} > {{Category_2}} > {{Category_3}} </span>
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var categoryImages = {
+    fashion: "Fashion.jpeg",
+    "health_&_beauty": "Health & Beauty.jpeg",
+    "tv,_audio_/_video,_gaming_&_wearables": "tv_gaming.jpeg",
+    "computers_&_laptops": "Computers & Laptops.jpeg",
+    cameras: "Cameras.jpeg",
+    "home_&_living": "Home & Living.jpeg",
+    watches_sunglasses_jewellery: "Watches,Sunglasses,Jewellery.jpeg",
+    "mobiles_&_tablets": "Mobiles & tablets.jpeg",
+    home_appliances: "Home Appliances.jpeg",
+  };
+
+  function normalizeCategoryName(category) {
+    return category.replace(/&amp;/g, "&").replace(/ /g, "_").toLowerCase();
+  }
+
+  var Category_1 = "{{ Category_1 }}";
+  var normalizedCategory = normalizeCategoryName(Category_1); // Get the category name from the server-side variable
+  var imageFilename = categoryImages[normalizedCategory] || "default.jpeg";
+  document.getElementById("categoryImage").src =
+    "../static/images/Category/" + imageFilename;
+</script>
+
+{% endblock %}

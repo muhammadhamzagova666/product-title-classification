@@ -1,0 +1,30 @@
+{% extends 'Navbar.html' %}
+ 
+{% block head %}
+
+  <link rel="stylesheet" href="{{ url_for('static' , filename='css/homepage.css') }}">
+
+{% endblock %}
+
+{% block body %} 
+
+  <!-- H E R O -->
+  <section id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 content-box hero-content">
+          <span>Product Title Classification</span>
+          <h1 style="font-size: 40px;">Revolutionize Your Product Management with Smart Categorization</b></h1>
+          <p>We categorize your product based on Title and Description</p>
+          <a href="#" class="btn btn-regular">Learn more</a>
+        </div>
+        <div class="homepage col-lg-7 col-md-7 col-sm-7 col-xs-7">
+          <img src="../static/images/main-banner.png" class="img-fluid" alt="classification">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- E N D  H E R O -->
+  
+{% endblock %}
